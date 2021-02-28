@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/Theme.ExoPlayerDemo">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:supportsPictureInPicture="true"
+            android:configChanges=
+                "screenSize|smallestScreenSize|screenLayout|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>

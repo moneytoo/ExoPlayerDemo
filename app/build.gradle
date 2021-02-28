@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.exoplayer"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -37,8 +37,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.13.1'
-    implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.1'
-
-    implementation fileTree(dir: "libs", include: ["*.aar"])
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.13.2'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.2'
 }

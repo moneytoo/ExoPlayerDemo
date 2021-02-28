@@ -27,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 .setUri(getIntent().getData())
                 .setMimeType(getIntent().getType());
 
-        RenderersFactory renderersFactory = new DefaultRenderersFactory(this)
-                .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_ON);
-        player = new SimpleExoPlayer.Builder(this, renderersFactory)
+        player = new SimpleExoPlayer.Builder(this)
                 .build();
 
         playerView.setPlayer(player);
@@ -37,5 +35,21 @@ public class MainActivity extends AppCompatActivity {
         player.setMediaItem(mediaItemBuilder.build());
 
         player.prepare();
+    }
+
+    @Override
+    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode) {
+        super.onPictureInPictureModeChanged(isInPictureInPictureMode);
+
+        if (isInPictureInPictureMode) {
+            playerView.hideController();
+        } else {
+            playerView.showController();
+        }
+    }
+
+    @Override
+    protected void onUserLeaveHint() {
+        enterPictureInPictureMode();
     }
 }

@@ -10,7 +10,19 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/Theme.ExoPlayerDemo">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ExoPlayerActivity"
+            android:label="Demo - ExoPlayer">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MediaPlayerActivity"
+            android:label="Demo - MediaPlayer">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
